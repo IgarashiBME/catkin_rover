@@ -1,0 +1,9 @@
+<launch>
+    <node pkg="imu_filter_madgwick" type="imu_filter_node" name="ImuFilter">
+        <param name="use_mag" type="bool" value="false" />
+        <param name="publish_tf" type="bool" value="true" />
+        <param name="world_frame" type="string" value="enu" />
+        <remap from="/imu/data_raw" to="/os_cloud_node/imu"/>
+        <remap from="/imu/data" to="/imu/data/filtered"/>
+    </node>
+</launch>

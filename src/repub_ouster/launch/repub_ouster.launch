@@ -1,0 +1,8 @@
+<!-- -->
+<launch>
+  <node pkg="tf" type="static_transform_publisher" name="baselink_to_velodyne" args="0 0 0 0 0 0 /base_link /velodyne 100" />
+  <node pkg="tf" type="static_transform_publisher" name="baselink_to_os_sensor" args="0 0 0 0 0 0 /base_link /os_sensor 100" />
+  <node pkg="repub_ouster" type="repub_ouster_node" name="repub_ouster" output="screen" required="true">
+    <!-- <remap from="~/points" to="/points_raw"/> !-->
+  </node>
+</launch>
