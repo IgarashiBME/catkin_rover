@@ -19,7 +19,7 @@ void pointcloud_callback (const sensor_msgs::PointCloud2& cloud_msg)
   int offset_z;
   int offset_int;
   int steps = 0;
-  ROS_INFO("%i", cloud_msg.data.size());
+  // ROS_INFO("%i", cloud_msg.data.size());
   for (int f=0; f<cloud_msg.fields.size(); ++f)
   {
     if (cloud_msg.fields[f].name == "x")
